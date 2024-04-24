@@ -28,11 +28,13 @@ public class ChatService {
         return chatRepository.save(chat);
     }
     
-    public Chat createNewChat(String title, ArrayList<Query> queries) {
+    public Chat createNewChat(String title, ArrayList<Query> queries, String username) {
+        //String userEmail = jwtService.extractUsername(jwt);
         Chat chat = new Chat();
         chat.set_id(generateRandomId()); // Set random ID
         chat.setTitle(title);
         chat.setQueries(queries);
+        chat.setUsername(username);
         return chatRepository.save(chat);
     }
 

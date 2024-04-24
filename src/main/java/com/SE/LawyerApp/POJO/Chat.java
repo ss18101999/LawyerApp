@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Chats")
 public class Chat {
+	private String username;
 	private ArrayList<Query> queries;
 	private String title;
 	private int _id;
@@ -25,6 +26,12 @@ public class Chat {
 	}
 	public void set_id(int _id) {
 		this._id = _id;
+	}
+	public void setUsername(String username){
+		this.username=username;
+	}
+	public String getUsername(){
+		return this.username;
 	}
 	@Override
 	public String toString() {
